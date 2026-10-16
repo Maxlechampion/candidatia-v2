@@ -24,6 +24,21 @@ PLANS: Dict[str, Dict[str, Any]] = {
         ],
         "highlight": False,
     },
+    "test_1fcfa": {
+        "code": "test_1fcfa",
+        "name": "TEST - 100 FCFA",
+        "description": "Plan temporaire pour tester FedaPay live (100 FCFA minimum)",
+        "price_xof": 100,
+        "price_eur": 0.15,
+        "price_usd": 0.17,
+        "credits": 1,
+        "is_free": False,
+        "features": [
+            "Plan de test",
+            "A supprimer apres verification",
+        ],
+        "highlight": False,
+    },
     "express": {
         "code": "express",
         "name": "Express",
