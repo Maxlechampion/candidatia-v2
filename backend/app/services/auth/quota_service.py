@@ -17,7 +17,6 @@ class QuotaExceededError(AppError):
 
 PLAN_QUOTAS: Dict[str, Dict[str, Any]] = {
     "free": {"name": "Decouverte", "credits": 1, "price_eur": 0, "is_free": True},
-    "test_1fcfa": {"name": "TEST - 100 FCFA", "credits": 1, "price_eur": 0.15, "is_free": False},
     "express": {"name": "Express", "credits": 1, "price_eur": 3.00, "is_free": False},
     "active": {"name": "Candidature Active", "credits": 5, "price_eur": 7.50, "is_free": False},
     "intensive": {"name": "Recherche Intensive", "credits": 15, "price_eur": 18.00, "is_free": False},

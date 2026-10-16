@@ -3,12 +3,17 @@ name: Backend CI
 on:
   push:
     branches: [main, develop]
+    paths:
+      - "backend/**"
+      - ".github/workflows/backend-ci.yml"
   pull_request:
     branches: [main, develop]
+    paths:
+      - "backend/**"
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     defaults:
       run:
         working-directory: backend
@@ -27,20 +32,8 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run all tests (excluding integration)
+      - name: Run tests
         env:
           SECRET_KEY: test-secret-key-for-ci-32chars-long
         run: |
-          pytest -m "not integration" --cov=app --cov-report=term-missing
-
-      - name: Verify API prefix consistency
-        env:
-          SECRET_KEY: test-secret-key-for-ci-32chars-long
-        run: |
-          pytest tests/test_api_prefix_consistency.py -v
-
-      - name: Verify frontend API calls
-        env:
-          SECRET_KEY: test-secret-key-for-ci-32chars-long
-        run: |
-          pytest tests/test_frontend_api_calls.py -v
+          pytest --cov=app --cov-report=term-missing
