@@ -81,7 +81,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-white">
       <header className="border-b border-slate-200 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container-main flex items-center justify-between py-4">
+        <div className="container-main flex items-center justify-between py-3 sm:py-4">
           <div className="text-xl font-bold text-dark">
             Candidat<span className="text-primary-500">IA</span>
           </div>
@@ -102,17 +102,17 @@ export default function HomePage() {
         </div>
       </header>
 
-      <section className="container-main py-20 md:py-28 text-center">
+      <section className="container-main py-12 sm:py-16 md:py-24 lg:py-28 text-center">
         <span className="inline-block px-3 py-1 text-xs font-bold text-primary-700 bg-primary-50 rounded-full mb-6">
           {t("badge_new")}
         </span>
-        <h1 className="text-4xl md:text-6xl font-bold text-dark mb-6 leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-dark mb-4 sm:mb-6 leading-tight">
           {t("hero_title")}
         </h1>
-        <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-10">
+        <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-6 sm:mb-10 px-2">
           {t("hero_subtitle")}
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-2">
           <Link
             href="/register"
             className="px-6 py-3 text-base font-semibold text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition shadow-lg shadow-primary-500/30"
@@ -136,7 +136,7 @@ export default function HomePage() {
           {t("features_subtitle")}
         </p>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {features.map((feature, i) => (
             <div
               key={i}
@@ -156,7 +156,7 @@ export default function HomePage() {
             {t("how_title")}
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto">
             {steps.map((item, i) => (
               <div key={i} className="text-center">
                 <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-600 text-white flex items-center justify-center text-2xl font-bold">
@@ -178,7 +178,7 @@ export default function HomePage() {
           {t("pricing_subtitle")}
         </p>
 
-        <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 max-w-7xl mx-auto">
           {plans.map((plan) => (
             <div
               key={plan.code}

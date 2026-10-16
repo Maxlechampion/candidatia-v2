@@ -28,3 +28,65 @@ a {
   margin: 0 auto;
   padding: 0 1rem;
 }
+
+/* ============================================================
+   RESPRONSIVE HELPERS (responsive-helper-applied)
+   ============================================================ */
+
+/* Forcer l'absence de scroll horizontal sur tous les ecrans */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Container principal responsive (pad variable selon ecran) */
+.container-main {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-main {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-main {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Ameliorer le rendu tactile */
+button, a, input, textarea, select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Taille minimum tactile pour accessibilite mobile */
+@media (max-width: 767px) {
+  button {
+    min-height: 44px;
+  }
+  input, select, textarea {
+    font-size: 16px; /* Eviter le zoom auto sur iOS */
+  }
+}
+
+/* Scrollable horizontal pour les tableaux sur mobile */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Safe area pour iPhone X+ */
+@supports (padding: env(safe-area-inset-left)) {
+  .container-main {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+}

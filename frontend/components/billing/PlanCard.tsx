@@ -42,7 +42,7 @@ export function PlanCard({
   return (
     <div
       className={cn(
-        "relative bg-white rounded-xl border p-6 transition flex flex-col",
+        "relative bg-white rounded-xl border p-4 sm:p-6 transition flex flex-col",
         isHighlighted
           ? "border-primary-500 shadow-lg shadow-primary-500/20"
           : "border-slate-200 hover:border-primary-300"
@@ -60,14 +60,14 @@ export function PlanCard({
         </span>
       )}
 
-      <h3 className="text-lg font-bold text-dark mb-2">{plan.name}</h3>
+      <h3 className="text-base sm:text-lg font-bold text-dark mb-2">{plan.name}</h3>
 
       {plan.description && (
         <p className="text-xs text-slate-500 mb-3">{plan.description}</p>
       )}
 
       <div className="mb-4">
-        <span className="text-3xl font-bold text-dark">{priceLabel}</span>
+        <span className="text-2xl sm:text-3xl font-bold text-dark">{priceLabel}</span>
         {!isFree && <span className="text-slate-500 text-sm ml-1">EUR</span>}
       </div>
 

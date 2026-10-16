@@ -51,10 +51,10 @@ export default function RelancesPage() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6">
-      <div className="flex items-start justify-between gap-4">
+    <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6">
+      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-dark mb-2">{t("title")}</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-dark mb-2">{t("title")}</h1>
           <p className="text-slate-600">{t("subtitle")}</p>
         </div>
         <Button onClick={() => setShowModal(true)}>{t("new")}</Button>

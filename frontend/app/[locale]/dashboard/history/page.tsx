@@ -46,9 +46,9 @@ export default function HistoryPage() {
   }, []);
 
   return (
-    <div className="max-w-6xl mx-auto space-y-6">
+    <div className="max-w-6xl mx-auto space-y-4 sm:space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-dark mb-2">{t("title")}</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold text-dark mb-2">{t("title")}</h1>
         <p className="text-slate-600">{t("subtitle")}</p>
       </div>
 

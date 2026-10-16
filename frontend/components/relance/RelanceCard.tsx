@@ -55,7 +55,7 @@ export function RelanceCard({
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-2 mt-4">
+        <div className="flex flex-col sm:flex-row flex-wrap gap-2 mt-4">
           <Button variant="outline" size="sm" onClick={() => setShowDraft((v) => !v)}>
             {showDraft ? t("hide_draft") : t("view_draft")}
           </Button>

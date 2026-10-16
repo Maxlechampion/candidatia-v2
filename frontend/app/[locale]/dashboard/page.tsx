@@ -37,15 +37,15 @@ export default function DashboardHome() {
   }, []);
 
   return (
-    <div className="max-w-6xl mx-auto space-y-6">
+    <div className="max-w-6xl mx-auto space-y-4 sm:space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-dark mb-2">
+        <h1 className="text-2xl sm:text-3xl font-bold text-dark mb-2">
           {t("welcome")} {user?.full_name || "!"}
         </h1>
         <p className="text-slate-600">{t("ready")}</p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         <Card>
           <CardHeader>
             <CardTitle className="text-sm font-medium text-slate-500">
@@ -94,7 +94,7 @@ export default function DashboardHome() {
         <CardHeader>
           <CardTitle>{t("quick_actions")}</CardTitle>
         </CardHeader>
-        <CardContent className="flex gap-3">
+        <CardContent className="flex flex-col sm:flex-row gap-2 sm:gap-3">
           <Link href="/dashboard/generate">
             <Button>{t("action_generate")}</Button>
           </Link>

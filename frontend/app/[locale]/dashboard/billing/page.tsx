@@ -74,20 +74,20 @@ export default function BillingPage() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto space-y-8">
+    <div className="max-w-7xl mx-auto space-y-6 sm:space-y-8">
       <div>
-        <h1 className="text-3xl font-bold text-dark mb-2">{t("title")}</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold text-dark mb-2">{t("title")}</h1>
         <p className="text-slate-600">{t("subtitle")}</p>
       </div>
 
       {error && <Alert variant="error">{error}</Alert>}
 
       <div>
-        <h2 className="text-xl font-bold text-dark mb-4">{t("plans_title")}</h2>
+        <h2 className="text-lg sm:text-xl font-bold text-dark mb-4">{t("plans_title")}</h2>
         {loading ? (
           <p className="text-slate-500 text-sm">{t("plans_loading")}</p>
         ) : (
-          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
             {plans.map((plan) => (
               <PlanCard
                 key={plan.code}

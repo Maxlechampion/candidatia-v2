@@ -16,10 +16,10 @@ export function AuthLayout({ children, title, subtitle }: AuthLayoutProps) {
         </Link>
       </header>
 
-      <main className="flex-1 flex items-center justify-center px-4 py-8">
+      <main className="flex-1 flex items-center justify-center px-3 sm:px-4 py-6 sm:py-8">
         <div className="w-full max-w-md">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-dark mb-2">{title}</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-dark mb-2">{title}</h1>
             {subtitle && <p className="text-slate-600">{subtitle}</p>}
           </div>
           {children}
