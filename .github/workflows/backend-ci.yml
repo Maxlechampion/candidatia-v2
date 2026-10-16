@@ -1,0 +1,46 @@
+name: Backend CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run all tests (excluding integration)
+        env:
+          SECRET_KEY: test-secret-key-for-ci-32chars-long
+        run: |
+          pytest -m "not integration" --cov=app --cov-report=term-missing
+
+      - name: Verify API prefix consistency
+        env:
+          SECRET_KEY: test-secret-key-for-ci-32chars-long
+        run: |
+          pytest tests/test_api_prefix_consistency.py -v
+
+      - name: Verify frontend API calls
+        env:
+          SECRET_KEY: test-secret-key-for-ci-32chars-long
+        run: |
+          pytest tests/test_frontend_api_calls.py -v
